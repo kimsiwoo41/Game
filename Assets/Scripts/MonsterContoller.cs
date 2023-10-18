@@ -1,13 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterContoller : MonoBehaviour
 {
     public int hp = 100;
 
+    public Slider slideHp;
+
+    private void Start()
+    {
+        slideHp.maxValue = hp;
+    }
+
     void Update()
     {
+        slideHp.value = hp;
         transform.Translate(Vector2.left * Time.deltaTime);
     }
 
